@@ -1,5 +1,6 @@
 ---
 import type { SiteMeta } from "@/types";
+import { ViewTransitions } from "astro:transitions";
 
 import BaseHead from "@/components/BaseHead.astro";
 import SkipLink from "@/components/SkipLink.astro";
@@ -26,6 +27,7 @@ const {
 			title={title}
 			canonical={canonical}
 		/>
+		<ViewTransitions />
 	</head>
 	<body>
 		<ThemeProvider />
