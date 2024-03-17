@@ -1,0 +1,226 @@
+---
+import { menuLinks } from "@/site-config";
+
+import Search from "../Search.astro";
+import ThemeToggle from "../ThemeToggle.astro";
+
+const url = new URL(Astro.request.url);
+---
+
+<header class="group relative mb-28 flex items-center sm:ps-[4.5rem]" id="main-header">
+	<div class="flex sm:flex-col">
+		<a
+			aria-current={url.pathname === "/" ? "page" : false}
+			class="inline-flex items-center grayscale transition-all ease-in-out hover:filter-none sm:relative sm:inline-block"
+			href="/"
+		>
+			<svg
+				version="1.1"
+				id="Layer_1"
+				xmlns="http://www.w3.org/2000/svg"
+				xmlns:xlink="http://www.w3.org/1999/xlink"
+				x="0px"
+				y="0px"
+				width="180px"
+				height="180px"
+				viewBox="0 0 180 180"
+				class="me-3 sm:absolute sm:start-[-4.5rem] sm:me-0 sm:h-10 sm:w-12"
+				xml:space="preserve"
+			>
+				<style type="text/css">
+					.st0 {
+						fill: #ff3200;
+					}
+					.st1 {
+						fill: url(#SVGID_1_);
+					}
+					.st2 {
+						fill: url(#SVGID_2_);
+					}
+					.st3 {
+						fill: #212121;
+					}
+					.st4 {
+						fill: url(#SVGID_3_);
+					}
+					.st5 {
+						fill: url(#SVGID_4_);
+					}
+					.st6 {
+						fill: url(#SVGID_5_);
+					}
+					.st7 {
+						fill: url(#SVGID_6_);
+					}
+					.st8 {
+						fill: url(#SVGID_7_);
+					}
+					.st9 {
+						fill: url(#SVGID_8_);
+					}
+					.st10 {
+						fill: url(#SVGID_9_);
+					}
+					.st11 {
+						fill: url(#SVGID_10_);
+					}
+					.st12 {
+						fill: url(#SVGID_11_);
+					}
+					.st13 {
+						fill: url(#SVGID_12_);
+					}
+					.st14 {
+						fill: url(#SVGID_13_);
+					}
+					.st15 {
+						fill: url(#SVGID_14_);
+					}
+					.st16 {
+						clip-path: url(#SVGID_16_);
+					}
+					.st17 {
+						fill: url(#SVGID_17_);
+					}
+					.st18 {
+						fill: url(#SVGID_18_);
+					}
+					.st19 {
+						fill: none;
+					}
+				</style>
+				<g>
+					<path
+						class="st0"
+						d="M131.25,180H15c-8.28,0-15-6.72-15-15V48.75C0,21.83,21.83,0,48.75,0h82.5C158.17,0,180,21.83,180,48.75v82.5
+		C180,158.17,158.17,180,131.25,180z"
+					></path>
+					<linearGradient
+						id="SVGID_1_"
+						gradientUnits="userSpaceOnUse"
+						x1="4.6223"
+						y1="175.3777"
+						x2="99.6618"
+						y2="80.3382"
+					>
+						<stop offset="0" style="stop-color:#FFAC47"></stop>
+						<stop offset="0.1517" style="stop-color:#FFA644;stop-opacity:0.8483"></stop>
+						<stop offset="0.3464" style="stop-color:#FF963A;stop-opacity:0.6536"></stop>
+						<stop offset="0.5644" style="stop-color:#FF7C2B;stop-opacity:0.4356"></stop>
+						<stop offset="0.7977" style="stop-color:#FF5816;stop-opacity:0.2023"></stop>
+						<stop offset="1" style="stop-color:#FF3200;stop-opacity:0"></stop>
+					</linearGradient>
+					<path
+						class="st1"
+						d="M78.75,180H15c-8.28,0-15-6.72-15-15v-63.75C0,85.1,13.1,72,29.25,72h49.5C94.9,72,108,85.1,108,101.25v49.5
+		C108,166.9,94.9,180,78.75,180z"
+					></path>
+					<linearGradient
+						id="SVGID_2_"
+						gradientUnits="userSpaceOnUse"
+						x1="5.1004"
+						y1="174.8996"
+						x2="63.9952"
+						y2="116.0048"
+					>
+						<stop offset="0" style="stop-color:#FFDC7E"></stop>
+						<stop offset="0.3616" style="stop-color:#FFC159;stop-opacity:0.6384"></stop>
+						<stop offset="1" style="stop-color:#FF8B10;stop-opacity:0"></stop>
+					</linearGradient>
+					<path
+						class="st2"
+						d="M52.5,180H15c-8.28,0-15-6.72-15-15v-37.5C0,116.73,8.73,108,19.5,108h33c7.45,0,13.92,4.18,17.2,10.31
+		c1.46,2.74,2.3,5.87,2.3,9.19v33C72,171.27,63.27,180,52.5,180z"
+					></path>
+				</g>
+			</svg>
+			<span class="text-xl font-bold sm:text-2xl">Stack on Fire</span>
+		</a>
+		<nav
+			aria-label="Main menu"
+			class="absolute -inset-x-4 top-14 hidden flex-col items-end gap-y-4 rounded-md bg-bgColor/[.85] py-4 text-accent shadow backdrop-blur group-[.menu-open]:z-50 group-[.menu-open]:flex sm:static sm:z-auto sm:-ms-4 sm:mt-1 sm:flex sm:flex-row sm:items-center sm:divide-x sm:divide-dashed sm:divide-accent sm:rounded-none sm:bg-transparent sm:py-0 sm:shadow-none sm:backdrop-blur-none"
+			id="navigation-menu"
+		>
+			{
+				menuLinks.map((link) => (
+					<a
+						aria-current={url.pathname === link.path ? "page" : false}
+						class="px-4 py-4 sm:py-0 sm:hover:underline"
+						data-astro-prefetch
+						href={link.path}
+					>
+						{link.title}
+					</a>
+				))
+			}
+		</nav>
+	</div>
+	<Search />
+	<ThemeToggle />
+	<mobile-button>
+		<button
+			aria-expanded="false"
+			aria-haspopup="menu"
+			aria-label="Open main menu"
+			class="group relative ms-4 h-7 w-7 sm:invisible sm:hidden"
+			id="toggle-navigation-menu"
+			type="button"
+		>
+			<svg
+				aria-hidden="true"
+				class="absolute start-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 transition-all group-aria-expanded:scale-0 group-aria-expanded:opacity-0"
+				fill="none"
+				focusable="false"
+				id="line-svg"
+				stroke="currentColor"
+				stroke-width="1.5"
+				viewBox="0 0 24 24"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path d="M3.75 9h16.5m-16.5 6.75h16.5" stroke-linecap="round" stroke-linejoin="round"
+				></path>
+			</svg>
+			<svg
+				aria-hidden="true"
+				class="absolute start-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 scale-0 text-accent opacity-0 transition-all group-aria-expanded:scale-100 group-aria-expanded:opacity-100"
+				class="text-accent"
+				fill="none"
+				focusable="false"
+				id="cross-svg"
+				stroke="currentColor"
+				stroke-width="1.5"
+				viewBox="0 0 24 24"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
+			</svg>
+		</button>
+	</mobile-button>
+</header>
+
+<script>
+	import { toggleClass } from "@/utils";
+
+	class MobileNavBtn extends HTMLElement {
+		private headerEl: HTMLElement;
+		private menuOpen: boolean;
+		private mobileButtonEl: HTMLButtonElement;
+
+		toggleMobileMenu = () => {
+			toggleClass(this.headerEl, "menu-open");
+			this.menuOpen = !this.menuOpen;
+			this.mobileButtonEl.setAttribute("aria-expanded", this.menuOpen.toString());
+		};
+
+		constructor() {
+			super();
+			this.headerEl = document.getElementById("main-header")!;
+			this.mobileButtonEl = this.querySelector("button") as HTMLButtonElement;
+			this.menuOpen = false;
+
+			this.mobileButtonEl.addEventListener("click", this.toggleMobileMenu);
+		}
+	}
+
+	customElements.define("mobile-button", MobileNavBtn);
+</script>
