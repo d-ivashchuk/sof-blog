@@ -19,16 +19,20 @@ const {
 ---
 
 <html lang={siteConfig.lang}>
-	<head>
-		<BaseHead
-			articleDate={articleDate}
-			description={description}
-			ogImage={ogImage}
-			title={title}
-			canonical={canonical}
-		/>
-		<ViewTransitions />
-	</head>
+	<script
+		defer
+		data-domain="stackonfire.com"
+		src="http://plausible-ww8k0ow.128.140.0.251.sslip.io:8000/js/script.js"></script>
+
+	<BaseHead
+		articleDate={articleDate}
+		description={description}
+		ogImage={ogImage}
+		title={title}
+		canonical={canonical}
+	/>
+	<ViewTransitions />
+
 	<body>
 		<ThemeProvider />
 		<SkipLink />
